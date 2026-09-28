@@ -1,0 +1,11 @@
+import { type HttpContext } from '@adonisjs/core/http'
+import type { UserResolver } from '@filipebraida/adonis-auditing/types'
+
+export default class UserResolverImpl implements UserResolver {
+  async resolve(ctx: HttpContext | undefined) {
+    if (ctx === undefined) return { type: 'User', id: '' }
+    const user = (ctx as any).auth?.user
+    if (!user) return { type: 'User', id: '' } //return null
+    return { type: user.constructor.name, id: String(user.id) }
+  }
+}
