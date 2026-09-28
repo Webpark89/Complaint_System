@@ -1,0 +1,40 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env.production
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      QUEUE_DRIVER: database
+    ports:
+      - "3333:3334"
+    restart: unless-stopped
+    volumes:
+      - smo-complaint-uploads:/app/storage
+
+  queue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["node", "ace.js", "queue:work"]
+    env_file:
+      - .env.production
+    environment:
+      NODE_ENV: production
+      QUEUE_DRIVER: database
+    restart: unless-stopped
+    volumes:
+      - smo-complaint-uploads:/app/storage
+
+volumes:
+  smo-complaint-uploads:
+
+
+#     networks:
+#       - npm-network
+# networks:
+#   npm-network:
+#     external: true
