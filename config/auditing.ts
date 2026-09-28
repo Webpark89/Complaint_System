@@ -1,0 +1,27 @@
+import { defineConfig } from '@filipebraida/adonis-auditing'
+
+export default defineConfig({
+  userResolver: () => import('#audit_resolvers/user_resolver'),
+  resolvers: {
+    ip_address: () => import('#audit_resolvers/ip_address_resolver'),
+    user_agent: () => import('#audit_resolvers/user_agent_resolver'),
+    url: () => import('#audit_resolvers/url_resolver'),
+  },
+
+  /**
+   * Field names whose values are replaced with '******' in audit rows.
+   * Use this for sensitive data (passwords, tokens) where you still want
+   * the event of change recorded but not the value itself. Per-model
+   * masking is also available via the static auditMask slot on the model.
+   */
+  hiddenFields: ['password'],
+
+  /**
+   * Field names to drop from audit rows project-wide. Use this for
+   * noise columns such as updatedAt or createdAt. Per-model overrides
+   * via the static auditExclude slot on the model are unioned with this
+   * list. Does not apply to auditCustom payloads.
+   */
+  auditExclude: ['updatedAt', 'createdAt', 'deletedAt', 'createdBy', 'updatedBy', 'deletedBy'],
+  skipIfOnlyChanged: ['loginAt'],
+})
