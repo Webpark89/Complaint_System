@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+/* @import "tailwindcss" source(none); */
+@source "../**/*.{ts,tsx}";
+@source "../../resources/views";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-gold-soft: var(--gold-soft);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --font-sans: "Prompt", system-ui, sans-serif;
+  --font-display: "Prompt", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.375rem;
+
+  /* Corporate compliance palette: deep navy + clean white/grey */
+  --background: oklch(1 0 0);
+  --foreground: #002856;
+
+  --card: oklch(1 0 0);
+  --card-foreground: #002856;
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: #002856;
+
+  /* Deep green primary inspired by agriculture / palm oil */
+  --primary: #002856; /* deep green ~ #1F3D2B */
+  --primary-foreground: oklch(1 0 0);
+  --primary-glow: #002856;
+
+  --secondary: oklch(0.975 0.004 150);
+  --secondary-foreground: oklch(0.24 0.05 150);
+
+  --muted: oklch(0.975 0.004 150);
+  --muted-foreground: oklch(0.52 0.015 250);
+
+  --accent: #D29E0E; /* warm gold ~ */
+  --accent-foreground: oklch(0.22 0.05 150);
+  --gold: #D29E0E;
+  --gold-foreground: oklch(0.22 0.05 150);
+  --gold-soft: oklch(0.94 0.05 85);
+
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.99 0.005 240);
+
+  --success: oklch(0.62 0.14 155);
+  --success-foreground: oklch(0.99 0.005 240);
+
+  --warning: #D29E0E;
+  --warning-foreground: #002856;
+
+  --info: oklch(0.55 0.15 240);
+  --info-foreground: oklch(0.99 0.005 240);
+
+  --border: oklch(0.91 0.005 250); /* #E5E7EB */
+  --input: oklch(0.91 0.005 250);
+  --ring: oklch(0.32 0.06 150);
+
+  --chart-1: oklch(0.4 0.13 258);
+  --chart-2: oklch(0.62 0.14 155);
+  --chart-3: #D29E0E;
+  --chart-4: oklch(0.55 0.22 27);
+  --chart-5: oklch(0.55 0.15 240);
+
+  --sidebar: #002856;
+  --sidebar-foreground: oklch(0.95 0.01 250);
+  --sidebar-primary: oklch(0.45 0.14 258);
+  --sidebar-primary-foreground: oklch(0.99 0.005 240);
+  --sidebar-accent: oklch(0.27 0.06 255);
+  --sidebar-accent-foreground: oklch(0.95 0.01 250);
+  --sidebar-border: oklch(0.3 0.05 255);
+  --sidebar-ring: oklch(0.45 0.14 258);
+
+  /* Custom design tokens */
+  --surface-muted: oklch(0.985 0.002 250); /* #F8F9FA */
+  --surface-deep: oklch(0.27 0.06 255); /* #E9ECEF */
+  --shadow-elegant: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.dark {
+  --background: oklch(0.14 0.03 255);
+  --foreground: oklch(0.97 0.01 250);
+  --card: #002856;
+  --card-foreground: oklch(0.97 0.01 250);
+  --popover: #002856;
+  --popover-foreground: oklch(0.97 0.01 250);
+  --primary: oklch(0.7 0.13 258);
+  --primary-foreground: oklch(0.14 0.03 255);
+  --primary-glow: oklch(0.78 0.13 258);
+  --secondary: oklch(0.26 0.05 255);
+  --secondary-foreground: oklch(0.97 0.01 250);
+  --muted: oklch(0.24 0.04 255);
+  --muted-foreground: oklch(0.7 0.02 255);
+  --accent: oklch(0.3 0.06 255);
+  --accent-foreground: oklch(0.97 0.01 250);
+  --destructive: oklch(0.65 0.2 27);
+  --destructive-foreground: oklch(0.99 0.005 240);
+  --success: oklch(0.7 0.14 155);
+  --success-foreground: oklch(0.14 0.03 255);
+  --warning: #D29E0E;
+  --warning-foreground: oklch(0.14 0.03 255);
+  --info: oklch(0.65 0.15 240);
+  --info-foreground: oklch(0.14 0.03 255);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.55 0.13 258);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  /* Lock body as sole scroll container - no window scroll allowed */
+  html {
+    height: 100dvh;
+  }
+
+  body {
+    overflow: hidden;
+    height: 100dvh;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Prompt", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Background layer on top-most z-index (but behind page content) */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: url('/assets/images/home-bg.png');
+    background-size: cover; 
+    opacity: 40%;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  /* Ensure app content renders above background */
+  #root, #app {
+    position: relative;
+    z-index: 1;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  button,
+  input,
+  select,
+  textarea,
+  table {
+    font: inherit;
+  }
+  html[lang="th"] body,
+  html[lang="th"] h1,
+  html[lang="th"] h2,
+  html[lang="th"] h3,
+  html[lang="th"] h4 {
+    font-family: "Prompt", sans-serif;
+    letter-spacing: 0;
+  }
+}
+
+@layer utilities {
+  .bg-surface-muted {
+    background: var(--surface-muted);
+  }
+  .bg-surface-deep {
+    background: var(--surface-deep);
+  }
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .auth-hero-grid {
+    background-image: radial-gradient(
+      circle at 30% 30%,
+      white 1px,
+      transparent 1px
+    );
+    background-size: 44px 44px;
+  }
+  .force-x-scrollbar {
+    overflow-x: scroll;
+    scrollbar-width: auto; /* Forces Firefox to show the scrollbar */
+    scrollbar-color: rgba(0, 0, 0, 0.5) #f1f1f1; /* Thumb and track color */
+  }
+  .force-x-scrollbar::-webkit-scrollbar {
+    height: 8px; /* Thickness of horizontal scrollbar */
+  }
+  .force-x-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  .force-x-scrollbar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-text {
+  color: var(--color-red-500)
+}
+
+.react-date-picker, react-time-picker {
+   padding:0;
+}
+
+/* .react-datetime-picker__wrapper, .react-date-picker, .react-time-picker {
+  border: 1px solid #D6D7D9;
+  padding: 0;
+  @apply  relative w-full h-12 rounded-lg px-3 text-sm transition-all outline-none  bg-white text-[#002856] hover:border-[#D29E0E] focus-visible:border-[#002856] focus-visible:ring-1 focus-visible:ring-[#002856]
+} */
+.react-datetime-picker__wrapper, .react-date-picker__wrapper, .react-time-picker__wrapper { border: none 0px !important; background: none !important; padding: 0 6px; }
+
+/* .react-datetime-picker.disabled {
+  @apply disabled:cursor-not-allowed disabled:bg-[#F9FAFB] disabled:text-[#898F98] disabled:border-[#D6D7D9]
+}
+.react-datetime-picker.error, .react-date-picker.error, .react-time-picker.error {
+  @apply border-[#FF4D00] bg-[#FF4D00]/10 text-[#FF4D00] hover:border-[#FF4D00] focus-visible:border-[#FF4D00] focus-visible:ring-[#FF4D00]
+} */
+.react-date-picker__inputGroup {
+  text-align: center;
+}
+.react-datetime-picker__inputGroup__input {
+  padding: 6px;
+}
+.react-date-picker__inputGroup__divider {
+  margin: 0 4px !important;
+}
+.react-time-picker__inputGroup__input {
+  margin: 0 4px;
+  background-color: transparent !important;
+}
+
+.react-date-picker__inputGroup__input:invalid, .react-time-picker__inputGroup__input:invalid {
+  background-color: white !important;
+}
+
+.always-scrollbar::-webkit-scrollbar {
+  height: 8px; /* Height of horizontal scrollbar */
+  display: block;
+}
+.always-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the tracking area */
+}
+.always-scrollbar::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollable thumb */
+  border-radius: 4px;
+}
+.always-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color on hover */
+}
