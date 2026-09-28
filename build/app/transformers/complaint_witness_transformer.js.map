@@ -1,0 +1,1 @@
+{"version":3,"file":"complaint_witness_transformer.js","sourceRoot":"","sources":["../../../app/transformers/complaint_witness_transformer.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,6BAA6B,CAAA;AAG7D,MAAM,CAAC,OAAO,OAAO,2BAA4B,SAAQ,eAAiC;IACxF,QAAQ;QACN,OAAO,IAAI,CAAC,IAAI,CAAC,IAAI,CAAC,QAAQ,EAAE,CAAC,IAAI,EAAE,UAAU,EAAE,WAAW,CAAC,CAAC,CAAA;IAClE,CAAC;CACF"}

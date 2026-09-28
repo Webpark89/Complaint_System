@@ -1,0 +1,31 @@
+export const controllers = {
+    admin: {
+        AuditLogs: () => import('#controllers/admin/audit_logs_controller'),
+        Auth: () => import('#controllers/admin/auth_controller'),
+        BaseComplaints: () => import('#controllers/admin/base_complaints_controller'),
+        Complaints: () => import('#controllers/admin/complaints_controller'),
+        ComplaintsExtend: () => import('#controllers/admin/complaints_extend_controller'),
+        ComplaintsSensitive: () => import('#controllers/admin/complaints_sensitive_controller'),
+        Dashboard: () => import('#controllers/admin/dashboard_controller'),
+        FormCategories: () => import('#controllers/admin/form_categories_controller'),
+        FormSubjects: () => import('#controllers/admin/form_subjects_controller'),
+        Forms: () => import('#controllers/admin/forms_controller'),
+        Oauths: () => import('#controllers/admin/oauths_controller'),
+        Organizations: () => import('#controllers/admin/organizations_controller'),
+        ReportAuditLog: () => import('#controllers/admin/report_audit_log_controller'),
+        ReportComplaintSummaries: () => import('#controllers/admin/report_complaint_summaries_controller'),
+        ReportExecutiveSummaries: () => import('#controllers/admin/report_executive_summaries_controller'),
+        ReportInvestigation: () => import('#controllers/admin/report_investigation_controller'),
+        ReportSla: () => import('#controllers/admin/report_sla_controller'),
+        Slas: () => import('#controllers/admin/slas_controller'),
+        Terms: () => import('#controllers/admin/terms_controller'),
+        UserGroups: () => import('#controllers/admin/user_groups_controller'),
+        UserRoles: () => import('#controllers/admin/user_roles_controller'),
+        Users: () => import('#controllers/admin/users_controller'),
+    },
+    front: {
+        Complaint: () => import('#controllers/front/complaint_controller'),
+        Home: () => import('#controllers/front/home_controller'),
+    },
+};
+//# sourceMappingURL=controllers.js.map

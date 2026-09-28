@@ -1,0 +1,1 @@
+{"version":3,"file":"complaint_subject.js","sourceRoot":"","sources":["../../../app/validators/complaint_subject.ts"],"names":[],"mappings":"AAAA,OAAO,IAAI,MAAM,cAAc,CAAA;AAE/B,MAAM,CAAC,MAAM,yBAAyB,GAAG,IAAI,CAAC,MAAM,CAAC;IACnD,cAAc,EAAE,IAAI,CAAC,MAAM,EAAE;IAC7B,aAAa,EAAE,IAAI,CAAC,MAAM,EAAE;CAC7B,CAAC,CAAA"}

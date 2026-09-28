@@ -1,0 +1,31 @@
+import { Env } from '@adonisjs/core/env';
+export default await Env.create(new URL('../', import.meta.url), {
+    NODE_ENV: Env.schema.enum(['development', 'production', 'test']),
+    PORT: Env.schema.number(),
+    HOST: Env.schema.string({ format: 'host' }),
+    LOG_LEVEL: Env.schema.string(),
+    APP_KEY: Env.schema.secret(),
+    APP_URL: Env.schema.string({ format: 'url', tld: false }),
+    SESSION_DRIVER: Env.schema.enum(['cookie', 'memory', 'database']),
+    DB_HOST: Env.schema.string(),
+    DB_PORT: Env.schema.number(),
+    DB_USER: Env.schema.string(),
+    DB_PASSWORD: Env.schema.string.optional(),
+    DB_DATABASE: Env.schema.string(),
+    GOOGLE_CLIENT_ID: Env.schema.string(),
+    GOOGLE_CLIENT_SECRET: Env.schema.string(),
+    MAIL_MAILER: Env.schema.enum(['smtp']),
+    MAIL_FROM_NAME: Env.schema.string(),
+    MAIL_FROM_ADDRESS: Env.schema.string(),
+    SMTP_HOST: Env.schema.string(),
+    SMTP_PORT: Env.schema.number(),
+    SMTP_USERNAME: Env.schema.string(),
+    SMTP_PASSWORD: Env.schema.string(),
+    DRIVE_DISK: Env.schema.enum(['fs', 'fileApi']),
+    FILE_API_ENDPOINT: Env.schema.string(),
+    FILE_API_BUCKET: Env.schema.string(),
+    FILE_API_CLIENT_ID: Env.schema.string(),
+    FILE_API_CLIENT_SECRET: Env.schema.string(),
+    QUEUE_DRIVER: Env.schema.enum(['redis', 'database', 'sync'])
+});
+//# sourceMappingURL=env.js.map

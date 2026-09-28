@@ -1,0 +1,1 @@
+import{j as l}from"./app-Ctpd-fXH.js";function e({children:x,narrow:a=!1,className:s=""}){return l.jsx("div",{className:`mx-auto w-full max-w-screen-xl px-4 md:px-6 lg:px-8 ${s}`,children:x})}export{e as M};
